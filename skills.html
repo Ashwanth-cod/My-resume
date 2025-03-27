@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="Ashwanth S - Developer and Innovator">
+<meta name="description" content="Personal website of Ashwanth S, a passionate developer with expertise in web development, game design, Flutter, and AI. Explore projects, achievements, and contact details.">
+<meta name="keywords" content="Ashwanth S, developer, game developer, web developer, Flutter developer, Python, Django, AI, multi-OS apps, resume, portfolio">
+<meta name="author" content="Ashwanth S">
+<meta name="robots" content="index, follow"> <!-- Ensure search engines index and follow -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - My Resume</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin-top: 40px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        header i {
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        /* Skill Card */
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Progress Bar */
+        .progress {
+            height: 20px;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            transition: width 1.5s ease;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+        }
+
+        /* Tooltip styling */
+        .tooltip-inner {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .tooltip .arrow::before {
+            border-top-color: #007bff;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1><i class="fas fa-cogs"></i> Skills</h1>
+        <p>Here are the technical skills I've honed over the years.</p>
+    </header>
+
+    <!-- Skills Section -->
+    <div class="container">
+        <section class="section-card" id="skills-container"></section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ashwanth S. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Skill data
+            const skills = [
+                { name: "Django (1 year)", width: "85%" },
+                { name: "Python (4 years)", width: "85%" },
+                { name: "JavaScript (3 years)", width: "80%" },
+                { name: "Flutter (1 year)", width: "60%" },
+                { name: "Git/GitHub", width: "70%" },
+                { name: "HTML/CSS", width: "95%" },
+                { name: "MySQL", width: "80%" },
+                { name: "PHP", width: "65%" },
+                { name: "React.js with Next.js", width: "80%" },
+                { name: "Nodejs", width: "55%" }
+            ];
+
+            const container = document.getElementById('skills-container');
+
+            // Generate progress bars dynamically
+            skills.forEach(skill => {
+                const progressDiv = document.createElement('div');
+                progressDiv.classList.add('mb-4');
+
+                const label = document.createElement('label');
+                label.classList.add('form-label', 'fw-bold');
+                label.innerText = skill.name;
+
+                const progress = document.createElement('div');
+                progress.classList.add('progress');
+                
+                const progressBar = document.createElement('div');
+                progressBar.classList.add('progress-bar', 'bg-info');
+                progressBar.role = "progressbar";
+                progressBar.style.width = "0"; // Start animation from 0
+
+                progressBar.setAttribute('data-bs-toggle', 'tooltip');
+                progressBar.setAttribute('title', skill.width); // Tooltip text
+                
+                progress.appendChild(progressBar);
+                progressDiv.appendChild(label);
+                progressDiv.appendChild(progress);
+                container.appendChild(progressDiv);
+
+                // Animate progress bars after delay
+                setTimeout(() => {
+                    progressBar.style.width = skill.width;
+                }, 300);
+            });
+
+            // Activate Bootstrap tooltips
+            const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+            tooltips.forEach(tooltip => new bootstrap.Tooltip(tooltip));
+        });
+    </script>
+</body>
+</html>

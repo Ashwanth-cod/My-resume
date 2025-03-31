@@ -37,10 +37,9 @@
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-            transition: width 1s;
-            transition-timing-function: ease-in;
+            transition: 1s width ease;
         }
-        
+
         #tagline-navbar:hover {
             width: 99%;
         }
@@ -72,14 +71,6 @@
             margin: 15px 0;
             text-decoration: none;
         }
-        
-        #fullscreen-menu .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 30px;
-            cursor: pointer;
-        }
 
         header {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
@@ -102,7 +93,7 @@
         }
 
         .btn-primary:hover {
-            background-color: #ff5722;
+            background-color: #d6ff22;
         }
 
         .section-card {
@@ -206,7 +197,7 @@
         <div>
             <a href="mailto:ashwanth.ars@gmail.com" class="btn btn-primary">Contact Me</a>
             <a href="Resume.pdf" download="Resume - Ashwanth S">
-                <button type="button" class="btn">Download CV</button>
+                <button type="button" class="btn btn-primary">Download CV</button>
             </a>
         </div>
     </header>
@@ -300,7 +291,7 @@
             const Navbar = document.getElementById("tagline-navbar");
             // Toggle between showing and hiding the menu
             fullscreenMenu.style.display = fullscreenMenu.style.display === "flex" ? "none" : "flex";
-            fullscreenMenu.style.border = fullscreenMenu.style.display === "flex" ? "5px solid white" : "5px solid white";
+            Navbar.style.boxShadow = fullscreenMenu.style.display === "flex" ? "5px 5px 100px white" : "none";
             
         });
         document.querySelectorAll(".links").forEach(link => {

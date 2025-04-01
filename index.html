@@ -267,6 +267,42 @@
         </a>
     </div>
 
+    <div class="section-card animate__animated animate__fadeInUp animate__delay-5s">
+        <form name="contactForm" data-netlify="true" data-netlify-recaptcha="true">
+            <p>
+                <label>
+                    <span>Name:</span>
+                    <input name="name" type="text" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    <span>Email:</span>
+                    <input name="email" type="email" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    <span>Subject:</span>
+                    <input name="subject" type="text" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    <span>Message:</span>
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+            </p>
+        
+            <!-- Netlify CAPTCHA -->
+            <div data-netlify-recaptcha="true"></div>
+        
+            <button type="submit">Submit</button>
+        </form>
+        <p class="result"></p>
+        
+    </div>
+
     <!-- Footer -->
     <footer class="text-center animate__animated animate__fadeInUp animate__delay-6s">
         <p>© 2024 Ashwanth S. All Rights Reserved.</p>
